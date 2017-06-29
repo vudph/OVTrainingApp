@@ -1,0 +1,6 @@
+{ "_id" : "1", "name" : "portTest1", "status" : "ACTIVE", "attributes" : [ { "name" : "attribute1", "dataType" : "String", "value" : "value1", "isReadable" : true, "isWritable" : false, "attributeGroup" : "GENERAL" }, { "name" : "attribute2", "dataType" : "String", "value" : "value1", "isReadable" : true, "isWritable" : false, "attributeGroup" : "SPECIAL" } ], "alarms" : [ { "_id" : null, "name" : "alarm1", "source" : "alarm1", "severity" : "MINOR" }, { "_id" : null, "name" : "alarm2", "source" : "alarm2", "severity" : "MAJOR" }, { "_id" : null, "name" : "alarm3", "source" : "alarm3", "severity" : "CRITICAL" } ], "type" : "PORT" }
+{ "name" : "portTest2", "status" : "ACTIVE", "attributes" : [], "alarms" : [], "type" : "PORT" }
+{ "name" : "portTest3", "status" : "ACTIVE", "attributes" : [], "alarms" : [], "type" : "PORT" }
+{ "name" : "portTest4", "status" : "ACTIVE", "attributes" : [], "alarms" : [], "type" : "PORT" }
+{ "name" : "portTest5", "status" : "OFFLINE", "attributes" : [], "alarms" : [], "type" : "PORT" }
+{ "name" : "portTest6", "status" : "OFFLINE", "attributes" : [], "alarms" : [], "type" : "PORT" }

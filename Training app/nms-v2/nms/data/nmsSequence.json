@@ -1,0 +1,3 @@
+{ "_id" : { "$oid" : "51ed034a3abeb91178c8367f" }, "_class" : "com.tma.nms.management.migrate.model.Sequence", "name" : "Alarm", "sequence" : 1472 }
+{ "_id" : { "$oid" : "51ed03643abeb91178c83680" }, "_class" : "com.tma.nms.management.migrate.model.Sequence", "name" : "Port", "sequence" : 0 }
+{ "_id" : { "$oid" : "51ed037f3abeb91178c83681" }, "_class" : "com.tma.nms.management.migrate.model.Sequence", "name" : "Device", "sequence" : 0 }

@@ -1,0 +1,35 @@
+<div id="chart">
+    <ng-dashboard model="model"/>
+</div>
+<div ng-show="debug">
+   <button class="btn" ng-click="changeColor()">Change color</button> 
+   <button class="btn" ng-click="show()">Show closed widgets</button>
+   <hr/>
+   <h4>For DonutChart</h4>
+    <p>Title  : <input type="text" ng-model="donutchart.options.title"/>
+   <hr/>
+   <h4>For GaugeChart</h4>
+   <p>Name:  <input type="text" ng-model="gaugechart.name"/></p></p>
+   <p>Max:  <input type="text" ng-model="gaugechart.options.max"/></p>   
+  
+</div>   
+
+<!--<div id="chart">-->
+	<!--<button class="btn" ng-click="changeColor()">Change color</button> | Change title  : <input type="text" ng-model="donutchart.options.title"/>-->
+    <!--<div  class="chartContainer">-->
+		<!--<npie-chart chart="donutchart" />-->
+	<!--</div>-->
+	<!--<div class="chartContainer">-->
+        <!--<npie-chart chart="piechart" />-->
+    <!--</div>-->
+	<!--<div class="chartContainer">-->
+		<!--<nbar-chart chart="barchart" />-->
+	<!--</div>-->
+	<!---->
+	<!--<div class="chartContainer" style="margin-left: 120px">-->
+		<!--<gauge-chart chart="gaugechart" />-->
+	<!--</div>-->
+<!--</div>-->
+
+
+

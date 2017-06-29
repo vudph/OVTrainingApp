@@ -1,0 +1,37 @@
+<div class="container">
+	<div class="row">
+		<div class="span3">
+			<div class="well h">
+				<nms-tree model="treeData" tree-node="deviceTree" menu-item-list="treeMenuItems"></nms-tree>
+			</div>
+		</div>
+		
+		<div class="span9">
+			<div class="tabbable">
+				<ul class="nav nav-tabs">
+					<li ng-class="{active: currentRoute=='config'}">
+						<a href=""ng-click="tabConfig.load()">{{tabConfig.title | i18next}}</a>
+					</li>
+					<li ng-class="{active: currentRoute=='alarm'}">
+						<a href="" ng-click="tabAlarm.load()">{{tabAlarm.title | i18next}}</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane" ng-class="{active: currentRoute=='config'}">
+						<nms-details model="detailsData"></nms-details>
+						<hr />
+						<button class="btn pull-right" ng-click="updateMetadata()">
+							<i class="icon-ok"></i>  {{'update' | i18next}}
+						</button>
+					</div>
+					<div class="tab-pane" ng-class="{active: currentRoute=='alarm'}">
+						<table ng-table="tableParams" class="table" table-data="alarms" row-class-calculator="calculateRowClass(rowObj)" on-hover-class='ngRowHover'
+							on-mouse-out-class="ngRowMouseOut" row-fields="dataFields" menu-item-list="listMenuItems" show-filter="true" table-filter="tableParams.filter">
+						</table>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,31 @@
+<div id="chart">
+	<div class="chartContainer">
+		<div>
+			<ng-piechart model="alarmHealthData"></ng-piechart>
+		</div>
+		<div class="caption" align="center">
+			<p> {{'alarmHealthSummary' | i18next}}</p>
+		</div>
+	</div>
+	
+	<div class="chartContainer">
+		<div align=center>
+			<ng-barchart model="alarmHealthData"></ng-barchart>
+		</div>
+		<div class="caption" align="center">
+			<p>{{'alarmHealthSummary' | i18next}}</p>
+		</div>
+	</div>
+	
+	<div class="chartContainer">
+		<div>
+			<ng-piechart model="inventoryData"></ng-piechart>
+		</div>
+		<div class="caption" align="center">
+			<p>{{'inventoryStatusSummary' | i18next}}</p>
+		</div>
+	</div>
+</div>
+
+
+

@@ -1,0 +1,10 @@
+/*******************************************************************************
+ * Sample for a Dynatree custom stylesheet.
+ * This is expected to be included after the standard ui.dynatree.css, thus
+ * overridung the defaults. 
+ */
+.dynatree-has-children span.dynatree-icon
+{
+    background-position: 0 0;
+	background-image: url("switch.png");
+}

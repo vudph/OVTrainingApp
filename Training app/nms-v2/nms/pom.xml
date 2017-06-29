@@ -1,0 +1,75 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.tma.nms</groupId>
+    <artifactId>master-pom</artifactId>
+    <packaging>pom</packaging>
+    <version>1</version>
+    <name>Network Management System Master POM</name>
+
+    <modules>
+        <module>nms-api</module>
+        <module>nms-app</module>
+    </modules>
+    
+    <build>
+        <plugins>
+            <!-- Maven Tomcat Plugin -->
+            <plugin>
+              <groupId>org.apache.tomcat.maven</groupId>
+              <artifactId>tomcat7-maven-plugin</artifactId>
+              <configuration>
+                <url>http://localhost:8080/manager/text</url>
+                <path>/nms</path>
+              </configuration>
+            </plugin>
+        </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>1.6</source>
+                        <target>1.6</target>
+                        <compilerArgument/>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-eclipse-plugin</artifactId>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <id>copy-dependencies</id>
+                            <phase>generate-resources</phase>
+                            <goals>
+                                <goal>copy-dependencies</goal>
+                            </goals>
+                            <configuration>
+                                <stripVersion>false</stripVersion>
+                                <outputDirectory>target/dependency</outputDirectory>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <properties>
+        <nms.version>1.0-SNAPSHOT</nms.version>
+        <serverIp>localhost</serverIp>
+        <tomcat.username>tomcat</tomcat.username>
+        <tomcat.password>tomcat</tomcat.password>
+        <skipTests>true</skipTests>
+        <skipKarma>true</skipKarma>
+        
+        <!-- 3rd party version -->
+        <slf4j-version>1.7.5</slf4j-version>
+        <spring-version>3.2.3.RELEASE</spring-version>
+        <atmosphere.version>1.0.13</atmosphere.version>
+        <org.codehaus.jackson>1.9.12</org.codehaus.jackson>
+    </properties>
+</project>

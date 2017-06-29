@@ -1,0 +1,15 @@
+Sails
+http://sailsjs.org/#!/documentation/concepts
+
+
+Sample source code:
+https://github.com/gregjopa/express-app-testing-demo
+https://github.com/DaftMonk/generator-angular-fullstack
+https://material.angularjs.org/
+
+Testing
+https://www.youtube.com/watch?v=6bKsDoFj83o
+https://blog.sergiocruz.me/angularjs-how-to-generate-code-coverage-for-yeoman-scaffolded-apps/
+http://www.yearofmoo.com/2013/09/advanced-testing-and-debugging-in-angularjs.html
+www.yearofmoo.com/2013/01/full-spectrum-testing-with-angularjs-and-karma.html
+https://blog.sergiocruz.me/angularjs-how-to-generate-code-coverage-for-yeoman-scaffolded-apps/

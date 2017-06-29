@@ -1,0 +1,78 @@
+<web-app id="WebApp_ID" version="2.4"
+	xmlns="http://java.sun.com/xml/ns/j2ee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+    <display-name>Restful Web Application</display-name>
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:applicationContext.xml</param-value>
+    </context-param>
+    <listener>
+        <listener-class>
+            org.springframework.web.context.ContextLoaderListener
+        </listener-class>
+    </listener>
+    <listener>
+        <listener-class>
+            org.springframework.web.context.request.RequestContextListener
+        </listener-class>
+    </listener>
+
+   	
+   	<!-- MeteorServlet -->
+	<!-- ############################################################################################### -->
+	
+	<servlet>
+		<servlet-name>nms</servlet-name>
+		<servlet-class>org.atmosphere.cpr.MeteorServlet</servlet-class>
+		
+		<init-param>
+			<!-- When MeteorServlet is used, this is the parameter that will be looked and all requests will be delegated to this servlet,
+			     Of course, since we are using, Spring MVC, we delegate to DispatcherServlet-->
+			<param-name>org.atmosphere.servlet</param-name>
+			<param-value>org.springframework.web.servlet.DispatcherServlet</param-value>
+		</init-param>
+		
+		<!-- Bunch of Atmosphere specific properties -->
+		<init-param>
+        		<param-name>org.atmosphere.cpr.broadcasterClass</param-name>
+        		<param-value>org.atmosphere.cpr.DefaultBroadcaster</param-value>
+        	</init-param>
+		
+		<init-param>
+            <param-name>org.atmosphere.useNative</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        
+        <init-param>
+            <param-name>org.atmosphere.useWebSocket</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        
+        <init-param>
+            <param-name>org.atmosphere.useStream</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>WEB-INF/nms-servlet.xml</param-value>
+        </init-param>
+        
+        <init-param> 
+             <param-name>org.atmosphere.useBlocking</param-name> 
+             <param-value>true</param-value> 
+         </init-param> 
+        
+        <load-on-startup>1</load-on-startup>	
+	
+	</servlet>
+	
+	
+  	<servlet-mapping> 
+      	<servlet-name>nms</servlet-name> 
+      	<url-pattern>/api/*</url-pattern> 
+   	</servlet-mapping>
+   	
+</web-app>

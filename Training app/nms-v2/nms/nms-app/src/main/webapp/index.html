@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html lang="en-US" ng-app="nmsDemo">
+    <head>
+        <meta charset="UTF-8">
+        <title>NMS Training Application</title>
+
+        <!-- CSS Includes -->        
+        <link rel="stylesheet" href="lib/ngTable/ng-table.css">
+        <link rel='stylesheet' type='text/css' href='css/skin-vista/ui.dynatree.css'>
+        <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+        <link rel='stylesheet' type='text/css' href='css/custom/custom.css'>
+        <link rel="stylesheet" href="css/style.css">
+        <link href="lib/nvd3/nv.d3.css" rel="stylesheet" type="text/css">
+        <link href="lib/sDashboard/sDashboard.css" rel="stylesheet" type="text/css">
+        <link href="lib/jQuery/jquery-ui.css" rel="stylesheet" type="text/css">
+    </head>
+    <body ng-controller="MainCtrl">
+
+        <!-- Header bar -->
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="brand" href="#" ng-i18next="header"></a>
+                    <div class="nav-collapse collapse">
+                        <p class="navbar-text pull-right">
+                            <a href="#" class="navbar-link">{{'home' | i18next }}</a> | <a href="#" class="navbar-link">{{'setting' | i18next }}</a> | <a href="#" class="navbar-link">{{'logout' | i18next }}</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main_view" ng-view ></div>
+
+        <!-- Footer bar -->
+        <div class="navbar navbar-fixed-bottom">
+            <div class="navbar-inner">
+                <div class="container">
+                    <div class="nav-collapse collapse">
+                        <div class="navbar-text pull-right">
+                            <label class="languageLabelHolder"> {{'language' | i18next}}:
+                            <select id="lngOpts" class="span2"  ng-model="selectedLang" ng-change="changeLang()">
+                                <option ng-repeat="lang in langs" value="{{lang.id}}" "{{ lang.selected ? 'selected' : '' }}">{{lang.name | i18next}}</option>
+                            </select>
+                            </label>
+                        </div>
+                        <div class="navbar-text pull-right">
+                            <label class="switchHolder"> {{'liveUpdate' | i18next}}:
+                            <input type="checkbox" class="ios-switch" ng-model="liveUpdateChecked" />
+                            <div class="switch"></div> </label>
+                        </div>
+                        <div class="navbar-text pull-right" ng-show="alarmLabelVisible">
+                            <label class="alarmLabelHolder">{{'numberOfAlarms' | i18next}}: {{alarmLabelText}}</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- JavaScript Includes -->
+        <script src="lib/jQuery/jquery-1.9.1.js" type="text/javascript"></script>
+        <script src='lib/jQuery/jquery-ui-1.10.3.custom.js' type="text/javascript"></script>
+        <script src='lib/jQuery/jquery.cookie.js' type="text/javascript"></script>
+        <script src='lib/jQuery/jquery.dynatree.js' type="text/javascript"></script>
+
+        <script type="text/javascript" src="lib/d3v3/d3.v3.min.js"></script>
+        <script type="text/javascript" src="lib/angular/angular.js"></script>
+        <script type="text/javascript" src="lib/angular/angular-resource.js"></script>
+        
+         <!-- NVD3 -->
+        <script src="lib/nvd3/nv.d3.min.js"></script>
+        <!-- tooltip for d3 -->
+        <script type="text/javascript" src="lib/d3v3/tooltip.js"></script>
+        
+
+        <!-- sDashboard -->
+        <script type="text/javascript" src="lib/sDashboard/flotr2.js"></script>
+        <script type="text/javascript" src="lib/sDashboard/jquery-sDashboard.js"></script>
+        
+        <script type="text/javascript" src="lib/bootstrap/ui-bootstrap-tpls-0.4.0.js"></script>
+        <script type="text/javascript" src="lib/ngTable/ng-table.js"></script>
+        <script type="text/javascript" src="lib/i18next/i18next-1.6.3.js"></script>
+        <script type="text/javascript" src="lib/ng-i18next/ng-i18next.js"></script>
+        
+        <script type="text/javascript" src="lib/atmo/jquery.atmosphere.js"></script>
+        
+        <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="js/controllers/MainCtrl.js"></script>
+        <script type="text/javascript" src="js/controllers/ChartCtrl.js"></script>
+        <script type="text/javascript" src="js/controllers/ContentCtrl.js"></script>
+        <script type="text/javascript" src="js/controllers/NVChartCtrl.js"></script>
+        <script type="text/javascript" src="js/controllers/NewChartCtrl.js"></script>
+         <!--<script type="text/javascript" src="js/controllers/TestCtrl.js"></script>-->
+        
+        <script type="text/javascript" src="js/directives/chartDirectives.js"></script>
+        <script type="text/javascript" src="js/directives/treeDirectives.js"></script>
+        <script type="text/javascript" src="js/directives/detailsDirective.js"></script>
+        <script type="text/javascript" src="js/directives/nvChartDirective.js"></script>
+        <script type="text/javascript" src="js/directives/newChartDirective.js"></script>
+        <script type="text/javascript" src="js/directives/TableContextMenu.js"></script>
+        <script type="text/javascript" src="js/directives/dashboardDirective.js"></script>
+         <!--<script type="text/javascript" src="js/directives/testDirectives.js"></script>-->
+
+        <script type="text/javascript" src="js/services/utilService.js"></script>
+        <script type="text/javascript" src="js/services/restServices.js"></script>
+
+    </body>
+</html>
